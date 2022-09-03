@@ -1,0 +1,26 @@
+{% extends "Main.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+<h1 class="mb-5">FORMULARIO MODELO 1 </h1>
+{% endblock %}
+
+
+
+{% block contenido %}
+
+<form action="{% url 'formulario1' %}" method="POST"> {%  csrf_token  %}
+
+    <table>
+        {{ formulario.as_table }}
+    <table>
+    <input type="submit" value="Enviar">
+
+
+</form>
+
+{{ mensaje }}
+
+{% endblock %}
