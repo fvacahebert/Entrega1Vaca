@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {% load static %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -14,18 +13,14 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static '/css/styles.css' %}" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'home' %}">HOME</a>
-                <a class="btn btn-primary" href="{% url 'Modelo1' %}">Modelo1</a>
-                <a class="btn btn-primary" href="{% url 'Modelo2' %}">Modelo2</a>
-                <a class="btn btn-primary" href="{% url 'Modelo3' %}">Modelo3</a>
-                <a class="btn btn-primary" href="{% url 'BusquedaModelo2' %}">BuscarModelo2</a>
-                <a class="btn btn-primary" href="{% url 'formulario2' %}">FormularioModelo2</a>
+                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="btn btn-primary" href="#signup">Sign Up</a>
             </div>
         </nav>
         <!-- Masthead-->
@@ -35,9 +30,7 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            {% block titulo %}
-                            
-                            {% endblock %}
+                            <h1 class="mb-5">Generate more leads with a professional landing page!</h1>
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -78,11 +71,6 @@
                 </div>
             </div>
         </header>
-
-        
-        {% block contenido %}
-
-        {% endblock %}
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
             <div class="container">

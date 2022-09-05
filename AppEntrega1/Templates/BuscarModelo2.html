@@ -1,0 +1,31 @@
+{% extends "Main.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+<h1 class="mb-5">ESTA ES LA PAGINA DE RESULTADO DE BUSQUEDA </h1>
+{% endblock %}
+
+
+
+{% block contenido %}
+
+
+<h1>RESULTADOS DE LA BUSQUEDA</h1>
+
+{% if apellido %}
+<ul>
+    {% for modelo2 in apellido %}
+    <li>{{modelo2.nombre}}</li>
+    <li>{{modelo2.apellido}}</li>
+    <li>{{modelo2.email}}</li>
+    <br>
+    {% endfor %}
+</ul>
+
+{% else %}
+<p>NO SE ENCONTRARON CURSOS</p>
+{% endif %}
+
+{% endblock %}

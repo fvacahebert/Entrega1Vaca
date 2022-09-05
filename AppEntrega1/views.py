@@ -43,8 +43,8 @@ def FormularioModelo2(request):
         nombre=informacion["nombre"]
         apellido=informacion["apellido"]
         email=informacion["email"]
-        modelo=ClaseModelo2(nombre=nombre, apellido=apellido, email=email)
-        modelo.save()
+        modelo2=ClaseModelo2(nombre=nombre, apellido=apellido, email=email)
+        modelo2.save()
         return render(request, "Modelo2.html",{"mensaje": "Formulario Creado Correctamente"})
 
     else:
@@ -63,7 +63,7 @@ def FormularioModelo3(request):
         profesion=informacion["profesion"]
         modelo=ClaseModelo3(nombre=nombre, apellido=apellido, email=email, profesion=profesion)
         modelo.save()
-        return render(request, "Modelo3.html",{"mensaje": "Formulario Creado Correctamente"})
+        return render(request, "Modelo3.html",{"mensaje": "Formulario Creado Correctamente"}) #NO ME ESTA TRAYENDO ESTO
 
     else:
         formulario=Modelo3Form()
@@ -71,19 +71,16 @@ def FormularioModelo3(request):
 
 #ESTOS VAN A SER LOS FORMULARIOS PARA REALIZAR LAS BUSQUEDAS QUE NOS PIDEN
 
-"""def BusquedaComision (request): #Esta es la vista para buscar datos en un formulario
-    return render(request, "AppCoder/BusquedaComision.html")"""
+def BusquedaModelo2 (request):
+    return render(request, "BusquedaModelo2.html")
 
-"""def Buscar(request):
-    #Esta linea de if es para cuando un usuario busca algo sin ingresar parametro (Blanco)
-    if request.GET["comision"]:
-      comision=request.GET["comision"] #Aca recibe la comision ingresada por formulario
-      cursos=Curso.objects.filter(comision__icontains=comision) #Traiga de la base todos los cursos que tengan comision
-      #cursos=Curso.objects.all() esto traeria todos los objetos que estan en la base. (el icontains es para que haga una busqueda por parametro y no de palabra exacta)
-      #cursos=Curso.objects.get(comision=comision) Este me trae uno
-      return render (request, "AppCoder/Buscar.html", {"cursos":cursos}) # Este es el diccionario que va ir al template de buscar para hacer la funcion for de busqueda
+def BuscarModelo2(request):
+    if request.GET["apellido"]:
+      apellido=request.GET["apellido"]
+      variable=ClaseModelo2.objects.filter(apellido__icontains=apellido)
+      return render (request, "BuscarModelo2.html", {"apellido":variable})
     else:
-      return render (request, "AppCoder/BusquedaComision.html", {"mensaje":"Debes ingresar datos validos"})"""
-
+      return render (request, "BusquedaModelo2.html", {"mensaje":"Debes ingresar datos validos"})
+#ME ESTA FALTANDO CREAR LA FUNCION EN LA QUE EL HTML BUSCAR VA A REALIZAR EL FOR PARA ENCONTRAR LOS DATOS
     
 

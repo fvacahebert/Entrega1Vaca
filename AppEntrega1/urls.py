@@ -11,5 +11,7 @@ urlpatterns = [
     path("FormularioModelo1/",FormularioModelo1,name="formulario1"),
     path("FormularioModelo2/",FormularioModelo2,name="formulario2"),
     path("FormularioModelo3/",FormularioModelo3,name="formulario3"),
+    path("BusquedaModelo2/",BusquedaModelo2,name="BusquedaModelo2"),
+    path("Buscar/",BuscarModelo2,name="BuscarModelo2"),
 
 ]
