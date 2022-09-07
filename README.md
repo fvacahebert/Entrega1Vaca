@@ -1,3 +1,6 @@
 # Entrega1Vaca
 La pagina esta basada en una tienda online
-Dentro de la pagina existen distintas secciones como INICIO - 
+Dentro de la pagina existen distintas secciones como INICIO - PRODUCTOS - ABOUT - CONTACT - REGISTRARSE - BUSCAR REGISTROS
+REGISTRARSE esta conformado por un formulario que esta especificado dentro de views el nombre que se le dio a la funcion es "FormularioModelo2", este cada vez que se ingresa un registro lo almacena en la base de datos. Si el registro es correcto manda a la pagina de INICIO con una leyenda que indica que el registro fue exitoso, caso contrario vuelve a enviarnos al formulario para hacer el ingreso de los datos nuevamente.
+CONTACT al igual que registrarse es un formulario que permite tomar los datos de la persona que desea contactarse y ademas el detalle de su consulta (Todo esto se almacena en la DB). Al igual que REGISTRARSE si la consulta fue correcta nos lleva a la pagina de inicio con una leyenda que indica que se recibio la consulta y que nos pondremos en contacto con el, caso contrario vuelve a enviarnos al formulario para hacer el ingreso de los datos nuevamente. La funcion esta definida dentro de views se llama "FormularioModelo3"
+BUSCAR REGISTROS es una seccion que nos permite hacer una busqueda de las personas que esta registradas y obtener sus datos (excepto contraseña). La funcion esta esta definida dentro de views ("BusquedaModelo2" y "BuscarModelo2")
