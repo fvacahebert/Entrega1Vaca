@@ -1,27 +1,33 @@
 from django.db import models
 
-# Create your models here.
 
-class ClaseModelo1(models.Model):
-    nombre=models.CharField(max_length=50)
-    comision=models.IntegerField()
+#VER SI BORRO ESTA CLASE
+#class ClaseModelo1(models.Model):
+    #nombre=models.CharField(max_length=50)
+    #comision=models.IntegerField()
 
-    def __str__(self):
-        return self.nombre+" "+str(self.comision)
+    #def __str__(self):
+        #return self.nombre+" "+str(self.comision)
 
+
+#ESTA ES LA CLASE PARA LOS REGISTROS DE LA PAGINA
 class ClaseModelo2(models.Model):
     nombre=models.CharField(max_length=50)
     apellido=models.CharField(max_length=50)
     email=models.EmailField()
+    usuario=models.CharField(max_length=50)
+    contrasenia=models.CharField(max_length=50)
 
     def __str__(self):
-        return self.nombre+" "+self.apellido+" "+str(self.email)
+        return self.nombre+" "+self.apellido+" "+str(self.email)+" "+str(self.usuario)+" "+str(self.contrasenia)
 
+
+#Clase para contacto
 class ClaseModelo3(models.Model):
     nombre=models.CharField(max_length=50)
     apellido=models.CharField(max_length=50)
     email=models.EmailField()
-    profesion=models.CharField(max_length=50)
+    texto=models.CharField(max_length=50)
 
     def __str__(self):
-        return self.nombre+" "+self.apellido+" "+str(self.email)+" "+self.profesion
+        return self.nombre+" "+self.apellido+" "+str(self.email)+" "+self.texto

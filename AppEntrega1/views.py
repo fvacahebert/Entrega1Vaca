@@ -17,24 +17,24 @@ def Modelo3 (request):
     return render(request, "Modelo3.html")
 
 
-#ESTE ES EL FORMULARIO PARA INGRESAR DATOS A MODELO1
-def FormularioModelo1(request):
-    if request.method=="POST":
-       form=Modelo1Form(request.POST)
-       if form.is_valid():
-        informacion=form.cleaned_data
-        nombre=informacion["nombre"]
-        comision=informacion["comision"]
-        modelo=ClaseModelo1(nombre=nombre, comision=comision)
-        modelo.save()
-        return render(request, "Modelo1.html",{"mensaje": "Formulario Creado Correctamente"})
+#VER SI DEJO ESTE FORMULARIO O LO BORRO
+#def FormularioModelo1(request):
+    #if request.method=="POST":
+       #form=Modelo1Form(request.POST)
+       #if form.is_valid():
+        #informacion=form.cleaned_data
+        #nombre=informacion["nombre"]
+        #comision=informacion["comision"]
+        #modelo=ClaseModelo1(nombre=nombre, comision=comision)
+        #modelo.save()
+       # return render(request, "Modelo1.html",{"mensaje": "Formulario Creado Correctamente"})
 
-    else:
-        formulario=Modelo1Form()
-        return render (request, "FormularioModelo1.html",{"formulario":formulario})
+   # else:
+        #formulario=Modelo1Form()
+        #return render (request, "FormularioModelo1.html",{"formulario":formulario})
 
 
-#ESTE ES EL FORMULARIO PARA INGRESAR DATOS A MODELO2
+#ESTE ES EL FORMULARIO PARA INGRESAR LOS REGISTROS EN LA PAGINA
 def FormularioModelo2(request):
     if request.method=="POST":
        form=Modelo2Form(request.POST)
@@ -43,15 +43,17 @@ def FormularioModelo2(request):
         nombre=informacion["nombre"]
         apellido=informacion["apellido"]
         email=informacion["email"]
-        modelo2=ClaseModelo2(nombre=nombre, apellido=apellido, email=email)
+        usuario=informacion["usuario"]
+        contrasenia=informacion["contrasenia"]
+        modelo2=ClaseModelo2(nombre=nombre, apellido=apellido, email=email, usuario=usuario, contrasenia=contrasenia)
         modelo2.save()
-        return render(request, "Modelo2.html",{"mensaje": "Formulario Creado Correctamente"})
+        return render(request, "inicio.html",{"mensaje": "Formulario Creado Correctamente"})
 
     else:
         formulario=Modelo2Form()
         return render (request, "FormularioModelo2.html",{"formulario":formulario})
 
-#ESTE ES EL FORMULARIO PARA INGRESAR DATOS A MODELO3
+#ESTE FORMULARIO VA A SER PARA EL CONTACT US
 def FormularioModelo3(request):
     if request.method=="POST":
        form=Modelo3Form(request.POST)
@@ -60,16 +62,16 @@ def FormularioModelo3(request):
         nombre=informacion["nombre"]
         apellido=informacion["apellido"]
         email=informacion["email"]
-        profesion=informacion["profesion"]
-        modelo=ClaseModelo3(nombre=nombre, apellido=apellido, email=email, profesion=profesion)
+        texto=informacion["texto"]
+        modelo=ClaseModelo3(nombre=nombre, apellido=apellido, email=email, texto=texto)
         modelo.save()
-        return render(request, "Modelo3.html",{"mensaje": "Formulario Creado Correctamente"}) #NO ME ESTA TRAYENDO ESTO
+        return render(request, "inicio.html",{"mensaje": "Gracias por contactarte con nosotros. Nuestro equipo se comunicara con vos"}) 
 
     else:
         formulario=Modelo3Form()
         return render (request, "FormularioModelo3.html",{"formulario":formulario})
 
-#ESTOS VAN A SER LOS FORMULARIOS PARA REALIZAR LAS BUSQUEDAS QUE NOS PIDEN
+#ESTOS SON LOS FORMULARIOS PARA BUSQUEDA DE REGISTROS
 
 def BusquedaModelo2 (request):
     return render(request, "BusquedaModelo2.html")
@@ -81,6 +83,6 @@ def BuscarModelo2(request):
       return render (request, "BuscarModelo2.html", {"apellido":variable})
     else:
       return render (request, "BusquedaModelo2.html", {"mensaje":"Debes ingresar datos validos"})
-#ME ESTA FALTANDO CREAR LA FUNCION EN LA QUE EL HTML BUSCAR VA A REALIZAR EL FOR PARA ENCONTRAR LOS DATOS
+
     
 
